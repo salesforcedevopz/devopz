@@ -11,5 +11,6 @@ public with sharing class Calculation {
     }
     public integer mul (integer a,integer b){
         return a*b;
+        //test
     }
 }
