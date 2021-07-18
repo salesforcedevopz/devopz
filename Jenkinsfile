@@ -41,13 +41,13 @@ node {
                 if (rc == 0) {
                     error 'Salesforce dev hub org authorization failed.'
                 }
-            println rc
+           // println rc
 			if(isUnix()){
 			rmsg = sh returnStdout:true, script:"${toolbelt} force:mdapi:deploy -d manifest/. -u${SF_USERNAME}"
 			}else{
 			rmsg = sh returnStdout:true, script:"${toolbelt} force:mdapi:deploy -d manifest/. -u${SF_USERNAME}"
 			}
-		    println rmsg
+		  //  println rmsg
 	    }
 }
 }
