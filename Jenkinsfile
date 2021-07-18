@@ -1,4 +1,5 @@
 #!groovy
+ 
 import groovy.json.JsonSlurperClassic
 
 node {
@@ -12,13 +13,14 @@ node {
 	
    
     def SF_INSTANCE_URL = env.SFDC_URL ?: "https://login.salesforce.com"
- 
-    def toolbelt = tool 'toolbelt'
-	
 	println SF_CONSUMER_KEY
 	println SF_USERNAME
 	println SERVER_KEY_CREDENTALS_ID
 	println SF_INSTANCE_URL
+ 
+    def toolbelt = tool 'toolbelt'
+	
+	
 	
 	stage('checkout source') {
         checkout scm
