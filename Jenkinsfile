@@ -35,8 +35,8 @@ node {
 			if(isUnix()){
                 rc =sh returnstatus: true, script:  "${toolbelt} force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyile ${server_key_file} --setdefaultdevhubusername --setalias HubOrg"
 				}else {
-				//bat "${toolbelt} update"
-				rc = bat returnstatus: true, script:  "\'${toolbelt}\' force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyile \'${server_key_file}\' --setdefaultdevhubusername --setalias HubOrg"
+				bat "${toolbelt} update"
+				rc = bat returnstatus: true, script:  "\"${toolbelt}\" force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyile \'${server_key_file}\' --setdefaultdevhubusername --setalias HubOrg"
 			}
                 if (rc != 0) {
                     error 'Salesforce dev hub org authorization failed.'
