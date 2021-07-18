@@ -4,7 +4,7 @@ import groovy.json.JsonSlurperClassic
 node {
 
 
-def BUILD_NUMBER = env.BUILD_NUMBER
+
 	def SF_CONSUMER_KEY=env.CONNECTED_APP_JENKINS
     def SF_USERNAME=env.DEVHUB_ORG
     def SERVER_KEY_CREDENTALS_ID=env.JENKIN_SERVER_KEY
