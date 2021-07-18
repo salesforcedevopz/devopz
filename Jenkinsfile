@@ -32,7 +32,7 @@ node {
             // -------------------------------------------------------------------------
  
             stage('Authorize DevHub') {
-			if(isUnix){
+			if(isUnix()){
                 rc =sh returnstatus: true, script: command "${toolbelt}/sfdx auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyile ${server_key_file} --setdefaultdevhubusername --setalias HubOrg"
 				}else {
 				bat "${toolbelt} update"
@@ -42,7 +42,7 @@ node {
                     error 'Salesforce dev hub org authorization failed.'
                 }
             println rc
-			if(isUnix){
+			if(isUnix()){
 			rmsg = sh returnStdout:true, script:"${toolbelt} force:mdapi:deploy -d manifest/. -u${SF_USERNAME}"
 			}else{
 			rmsg = sh returnStdout:true, script:"\"${toolbelt}\" force:mdapi:deploy -d manifest/. -u${SF_USERNAME}"
