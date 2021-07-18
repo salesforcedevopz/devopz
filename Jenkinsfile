@@ -18,7 +18,7 @@ node {
 	println SERVER_KEY_CREDENTALS_ID
 	println SF_INSTANCE_URL
  
-    def toolbelt = tool "toolbelt"
+    def toolbelt = tool 'toolbelt'
 	
 	
 	
