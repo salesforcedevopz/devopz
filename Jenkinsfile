@@ -36,7 +36,7 @@ node {
             }
 			if(isUnix){
 			rmsg = sh returnStdout:true, script:"${toolbelt} force:mdapi:deploy -d manifest/. -u${SF_USERNAME}"
-			else{
+			}else{
 			rmsg = sh returnStdout:true, script:"\"${toolbelt}\" force:mdapi:deploy -d manifest/. -u${SF_USERNAME}"
 			}
  
